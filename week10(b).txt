@@ -1,0 +1,7 @@
+x <- 1:10
+y <- 2 * exp(0.3 * x) + rnorm(10, 0, 1)
+model <- nls(y ~ a * exp(b * x), start = list(a = 1, b = 0.1))
+summary(model)
+plot(x, y, main="Non-Linear Least Squares Fit", pch=19, col="blue")
+lines(x, predict(model), col="red", lwd=2)
+legend("topleft", legend=c("Data", "Fitted Curve"), col=c("blue", "red"), pch=c(19, NA), lty=c(NA, 1))
