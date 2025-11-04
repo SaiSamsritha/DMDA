@@ -1,0 +1,7 @@
+input <- mtcars[,c("mpg", "wt", "disp", "hp")]
+print(head(input))
+model <- lm(mpg~wt+disp+hp, data= input)
+print(summary(model))
+predicted_mpg <- predict(model,input)
+plot(input $ mpg, predicted_mpg, main= "Actual Vs Predicted MPG", xlab = "Actual MPG", ylab = "Predicted MPG", pch=19, col="blue")
+abline(a=0,b=1,col="red",lwd=2)
