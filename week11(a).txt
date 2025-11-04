@@ -1,0 +1,54 @@
+D-norm:
+
+x <- seq(-10, 10, by = 0.1)
+y <- dnorm(x, mean = 0, sd = 1)
+plot(x, y,
+main = "Normal Distribution (mean = 0, sd = 1)",
+xlab = "X",
+ylab = "Y",
+pch = 1)
+
+Pnorm:
+
+x <- seq(-5, 10, by = 0.1)
+y <- pnorm(x, mean = 2.5, sd = 2)
+plot(x, y, type = "l", col = "blue", lwd = 2,
+main = "Cumulative Normal Distribution (S-shape)",
+xlab = "x", ylab = "Cumulative Probability")
+png(file = "pnorm_s_shape.png", width = 800, height = 600)
+plot(x, y, type = "l", col = "blue", lwd = 2,
+main = "Cumulative Normal Distribution (S-shape)",
+xlab = "x", ylab = "Cumulative Probability")
+dev.off()
+
+qnorm:
+
+x <- seq(0.01, 0.99, by = 0.02) # avoid 0 and 1, qnorm goes to -Inf/+Inf
+y <- qnorm(x, mean = 2, sd = 1)
+plot(x, y, type = "l", col = "red", lwd = 2,
+main = "Quantile Function of Normal Distribution",
+xlab = "Probability", ylab = "Quantile Value")
+png(file = "qnorm_curve.png", width = 800, height = 600)
+plot(x, y, type = "l", col = "red", lwd = 2,
+main = "Quantile Function of Normal Distribution",
+xlab = "Probability", ylab = "Quantile Value")
+dev.off()
+
+rnorm:
+
+y <- rnorm(50)
+hist(y,
+breaks = 10, # number of bins
+col = "skyblue", 
+border = "black", main = "Histogram of Normally Distributed Sample",
+xlab = "Values",
+ylab = "Frequency")
+png(file = "rnorm_histogram.png", width = 800, height = 600)
+hist(y,
+breaks = 10,
+col = "skyblue",
+border = "black",
+main = "Histogram of Normally Distributed Sample",
+xlab = "Values",
+ylab = "Frequency")
+dev.off()
