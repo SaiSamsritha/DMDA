@@ -1,0 +1,8 @@
+x <- c(1,2,3,4,5,6,7,8,9,10)
+y <- c(0,0,0,0,0,1,1,1,1,1)
+data <- data.frame(x=x, y=y)
+log_model <- glm(y~x, data = data, family = "binomial")
+summary(log_model)
+x_values <- seq(min(x), max(x), length.out = 100)
+predicted_probs <- predict(log_model, newdata = data.frame(x =x_values, type="response")
+plot(x,y, pch=19, col="blue", main="Logistic Regression", xlab = "x", ylab ="probability"))
