@@ -1,0 +1,37 @@
+dbinom:
+
+x <- seq(0, 50, by = 1)
+y <- dbinom(x, size = 50, prob = 0.5)
+plot(x, y,
+type = "p", 
+pch = 19, 
+col = "darkblue", 
+cex = 1.5, 
+main = "Binomial Distribution (n=50, p=0.5)",
+xlab = "Number of Successes",
+ylab = "Probability")
+png(file = "dbinom_dots.png", width = 800, height = 600)
+plot(x, y,
+type = "p",
+pch = 19,
+col = "darkblue",
+cex = 1.5,
+main = "Binomial Distribution (n=50, p=0.5)",
+xlab = "Number of Successes",
+ylab = "Probability")
+dev.off()
+
+pbinom:
+
+x <- pbinom(26,51,0.5)
+print(x)
+
+qbinom:
+
+x <- qbinom(0.25,51,1/2)
+print(x)
+
+rbinom:
+
+x <- rbinom(8,150,.4)
+print(x)
